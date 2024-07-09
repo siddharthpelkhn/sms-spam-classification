@@ -8,24 +8,8 @@ import base64
 
 ps = PorterStemmer()
 
-def sidebar_bg(side_bg):
+st.image("spam.jpeg")
 
-   side_bg_ext = 'png'
-
-   st.markdown(
-      f"""
-      <style>
-      [data-testid="stSidebar"] > div:first-child {{
-          background: url(data:image/{side_bg_ext};base64,{base64.b64encode(open(side_bg, "rb").read()).decode()});
-      }}
-      </style>
-      """,
-      unsafe_allow_html=True,
-      )
-
-
-side_bg = 'https://dazeinfo.com/wp-content/uploads/2020/08/spam-sms-blocking-apps-1.jpg'
-sidebar_bg(side_bg)
 def transform_text(text):
     text = text.lower()
     text = nltk.word_tokenize(text)
@@ -68,3 +52,5 @@ if st.button('predict'):
         st.header("Spam")
     else:
         st.header("Not spam")
+
+# st.image("spam.jpeg")
