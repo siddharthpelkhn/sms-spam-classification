@@ -1,11 +1,13 @@
 import streamlit as st
 import pickle
 import string
-from nltk.corpus import stopwords
 import nltk
+nltk.download('punkt')
+nltk.download('stopwords')
+from nltk.corpus import stopwords
+
 from nltk.stem.porter import PorterStemmer
 import base64
-nltk.download('punkt')
 ps = PorterStemmer()
 
 st.image("spam.jpeg")
